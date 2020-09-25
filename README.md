@@ -1,12 +1,12 @@
 ﻿# 2D GAME   PROGRAMMING
 Written by: Minkyu Ham(함민규)
-Korea Polytechnic University
-Department of Game Engineering 2019180044
-GitHub: Archvile-KPU
-Repository URL: https://github.com/Archvile-KPU/2DGP_Archvile.git
-Contact: archvile@kpu.ac.kr
+Korea Polytechnic University   
+Department of Game Engineering 2019180044   
+GitHub: Archvile-KPU   
+Repository URL: https://github.com/Archvile-KPU/2DGP_Archvile.git   
+Contact: archvile@kpu.ac.kr   
 
-This document is written in order to inform anyone who is interested in this very project.
+This document is written in order to inform anyone who is interested in this very project.   
 
 ### TABLE OF CONTENT
 >  I. Introduction
@@ -18,15 +18,16 @@ This document is written in order to inform anyone who is interested in this ver
 **게임의 제목: DOOM 2D**
 **원본 게임의 정보:**
 > First Person Shooter 장르의 기반을 다진 게임.
-> 데스매치와 같은 용어부터 시작해서, 데스매치, 클리핑 등의 용어 사용의 시초가 되고 게임 모드(MOD) 개발의 초석이 된 게임으로, 93년 첫 시리즈 발매 이후로 2020년에도 신작(DOOM Eternal)이 발매된 베스트셀링 프랜차이즈.
+> 데스매치와 같은 용어부터 시작해서, 데스매치, 클리핑 등의 용어 사용의 시초가 되고 게임 모드(MOD) 개발의 초석이 된 게임으로, 93년 첫 시리즈 발매 이후로 2020년에도 신작(DOOM Eternal)이 발매된 베스트셀링 프랜차이즈.    
+> 
 게임 스크린샷:
 > ![enter image description here](https://raw.githubusercontent.com/Archvile-KPU/TEMP/51532226e537c29fd9e1fb874f1e2a738f8d472b/d3bpppr-7b7d8be0-5168-4e55-bb7e-67a7b6d2f346.png)
 
 **게임의 목적:**
 > 악마들을 쓰러트리며 죽지 않고 스테이지를 클리어하는 것이 목적. 각 스테이지마다 Exit(또는 레벨 종료 트리거)이 한 개 이상 있다. 이 때 클리어 스크린에 클리어에 걸린 시간, 획득한 아이템, 발견한 비밀(Secret)의 개수를 표시하여 스피드런 등에 활용한다.
 ### II. GAMESTATE BASICS
- GameState의 수: estimated to be 12
-GameState 종류: 
+ GameState의 수: estimated to be 12   
+ GameState 종류: 
  - ## Game Lobby
  - #### Create New Game
 > - Choose Episode
