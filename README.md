@@ -1,4 +1,6 @@
 ﻿# 2D GAME   PROGRAMMING
+![enter image description here](https://upload.wikimedia.org/wikipedia/commons/c/cb/Doom_logo.png)
+    
 Written by: Minkyu Ham(함민규)
 Korea Polytechnic University   
 Department of Game Engineering 2019180044   
@@ -8,13 +10,16 @@ Contact: archvile@kpu.ac.kr
 
 This document is written in order to inform anyone who is interested in this very project.   
 
-### TABLE OF CONTENT
->  I. Introduction
->  II. GameState basics
->  III. GameState details
->  IV. Required technologies
+## TABLE OF CONTENT
+>  I. Introduction    
+>  II. Game Concepts   
+>  III. Development Objectives    
+>  IV. Est. Game Demonstration    
+>  V. Development Schedule    
+>  VI. Required technologies    
+>  VII. References    
 
-### I. INTRODUCTION
+## I. INTRODUCTION
 **게임의 제목: DOOM 2D**
 **원본 게임의 정보:**
 > First Person Shooter 장르의 기반을 다진 게임.
@@ -23,9 +28,33 @@ This document is written in order to inform anyone who is interested in this ver
 게임 스크린샷:
 > ![enter image description here](https://raw.githubusercontent.com/Archvile-KPU/TEMP/51532226e537c29fd9e1fb874f1e2a738f8d472b/d3bpppr-7b7d8be0-5168-4e55-bb7e-67a7b6d2f346.png)
 
+**만들고자 하는 것:**
+> 둠 1993을 2D 게임으로서 재해석하여 2차원 공간에 투영해 리메이크한 게임 
+
 **게임의 목적:**
 > 악마들을 쓰러트리며 죽지 않고 스테이지를 클리어하는 것이 목적. 각 스테이지마다 Exit(또는 레벨 종료 트리거)이 한 개 이상 있다. 이 때 클리어 스크린에 클리어에 걸린 시간, 획득한 아이템, 발견한 비밀(Secret)의 개수를 표시하여 스피드런 등에 활용한다.
-### II. GAMESTATE BASICS
+
+## II. GAME CONCEPTS
+장르: 2D 톱-다운 슈터    
+핵심 의제: FPS 게임인 Counter-Strike를 2D 톱다운 슈터 CS2D로 리메이크 한 것처럼, FPS 게임인 DOOM을 2D 톱-다운 슈터 게임으로 리메이크 하는 것    
+![Counter-Strike (2000) - First Person Shooter](https://www.asiaone.com/sites/default/files/original_images/Jun2020/2019-03-14-image-27-2.jpg)
+##### 예시: Counter-Strike (2000) - First Person Shooter     
+![CS2D](https://cdn.cloudflare.steamstatic.com/steam/apps/666220/ss_3ae027134e9e7ec64395c4011e22fc085eca1750.1920x1080.jpg?t=1569927979)
+##### 예시: CS2D (2004) - 2D Top-Down Shooter    
+
+Python 및 Pico2D로 개발중    
+
+## III. DEV. OBJECTIVES
+1. 게임 로비
+2. 메인 게임
+> 2.1. 레벨 디자인 (E1M1을 포함한 맵 디자인)     
+> 2.2. HUD(Head-Up Display)    
+> 2.3. 사살한 적 수, 아이템 획득, 비밀(Secrets) 발견 비율과 스피드런을 위한 시간을 보여주는 엔드 스크린    
+3. 개체
+> 3.1. 다양한 종류의 무기(e.g., Pistol, Shotgun, Chaingun, Plasma Rifle etc.,)    
+> 3.2. 다양한 종류의 적 (e.g., Zombieman, Imp, Shotgunner etc.,)    
+
+#### GAMESTATE BASICS
  GameState의 수: estimated to be 12   
  GameState 종류: 
  - ## Game Lobby
@@ -45,9 +74,9 @@ This document is written in order to inform anyone who is interested in this ver
  - #### Quit Game
 > - AreYouSure?
 
-### III. GAMESTATE DETAILS
-#### 한줄 설명:
- - ## Game Lobby: 게임 로비,로고 출력, 데모 스크린 출력(if possible.)
+#### GAMESTATE DETAILS
+#### 각 게임 스테이트에 대한 설명:
+ - ### Game Lobby: 게임 로비,로고 출력, 데모 스크린 출력(if possible.)
  - #### Create New Game: 새로운 게임 시작, 에피소드와 난이도 선택
 > - Choose Episode: 에피소드 선택창
 > - Choose Difficulty: 난이도 선택창
@@ -66,90 +95,90 @@ This document is written in order to inform anyone who is interested in this ver
 
 #### 필요 객체 목록:
 Game Lobby
-> DOOM logo
-> Menu selections
-> Game Demo screen(if possible.)
-> Cursor Skull
+> DOOM logo    
+> Menu selections    
+> Game Demo screen(if possible.)     
+> Cursor Skull    
 
 Create New Game
 > Choose Episode
->> Which Episode?
->> Menu Selections
->> Cursor Skull
+>> Which Episode?    
+>> Menu Selections    
+>> Cursor Skull    
 >
 > Choose Difficulty
->> Which Difficulty?
->> Menu Selections
->> Cursor Skull
+>> Which Difficulty?    
+>> Menu Selections    
+>> Cursor Skull    
 >
 >NIGHTMARECHECK
->> Are you sure?
->> Menu Selections
+>> Are you sure?    
+>> Menu Selections    
 >> Cursor Skull
 >
 
 GAME_MAIN
 > HUD(Head-Up Display)
->> Ammo
->> Health
->> Arsenal
->> Armor
->> Ammo_t
+>> Ammo    
+>> Health    
+>> Arsenal    
+>> Armor    
+>> Ammo_t    
 >> Face_Indicator
 >
 > Monsters
 >> ZombieMan, Imp, Pinkie etc..,
 >
-> Doors
-> Walls
+> Doors    
+> Walls    
 > Switches
->> Exit
->> DoorSwitches
->>Event_trigger
+>> Exit     
+>> DoorSwitches    
+>>Event_trigger    
 >
-> Secret_Trigger
-> ItemPickups
->> Weapon
->> Ammo
->> Health
->> Powerup
->> Key
+> Secret_Trigger    
+> ItemPickups    
+>> Weapon    
+>> Ammo    
+>> Health    
+>> Powerup    
+>> Key    
 >
 > Entities
 
 GAME_ENDSCREEN
-> KillCount
-> ItemCount
-> SecretCount
-> PAR
-> ElapsedTime
+> KillCount    
+> ItemCount    
+> SecretCount    
+> PAR    
+> ElapsedTime    
 
 GAME_YOU_ARE_HERE
-> Current Position
+> Current Position    
 > Episode Map
 
 GAME_EPILOGUE
 > Text formed storyline - NOT SIGNIFICANT! - John Carmack
 
 Game Options
-> Graphics Options
-> Controls
-> Brutality Control
+> Graphics Options    
+> Controls    
+> Brutality Control    
 
 Load Game
-> Save Files
+> Save Files    
 > Cursor Skull
 
 Read This!
-> Default Controls
-> Credits
+> Default Controls    
+> Credits    
 
 Quit Game
 > AreYouSure?
 >> Message 
 
 #### 처리할 키/마우스 이벤트
-- ## Game Lobby: 윈도우의 X버튼을 누르면 종료, 마우스나 키로 로비 메뉴 선택
+- ### Game Lobby: 윈도우의 X버튼을 누르면 종료, 마우스나 키로 로비 메뉴 선택
  - #### Create New Game: 
 > - Choose Episode: 마우스로 선택, esc로 이전 단계
 > - Choose Difficulty: 마우스로 선택, esc로 이전 단계 
@@ -170,26 +199,53 @@ if possible: CHEAT CODES(IDDQD)
 State 전환:
 위 키 처리 메소드에 조금 설명되어 있으나 보충하자면, 메뉴 선택(클릭)으로 하위 state에 진입하며, esc로 상위 state에 진입한다. Hierarchy는 위 리스트를 따른다.
 
-### IV. REQUIRED TECHNOLOGIES
+## IV. EST. GAME DEMO
+Lobby Demonstration - 로비 예상도     
+![](https://github.com/Archvile-KPU/TEMP/blob/master/LobbyDemo.png?raw=true)
+    Footage From E1M1 speedrun WR(8s) by 4shockblast(2019)  - 존재할 수 있는 게임플레이 예시      
+[![GameMain](https://github.com/Archvile-KPU/TEMP/blob/master/mainG.png?raw=true)](https://youtu.be/1UkeFwJ-yHI)
+
+
+## V. DEV. SCHEDULE
+W1. 게임 기획 및 디자인    
+W2. 게임 엔진 프로그래밍    
+W3. 게임 엔진 프로그래밍    
+W4. 스프라이트 및 텍스쳐 이미지(아트워크)    
+W5. 레벨 디자인    
+W6. SFX(사운드)    
+W7. 시스템 최적화    
+W8. 베타 테스팅, 출시/공개 전 디버그    
+
+
+
+## VI. REQUIRED TECHNOLOGIES
 #### 다른 과목에서 배운 기술:
-> OpenGL 수업에서 그래픽 처리와 충돌 처리에 대해 일부 배움
-> OSSW 수업에서 프로젝트에 도움이 될 Git 사용법을 익힘
-> C Programming에서의 기본적인 프로그래밍 개념
-> C++ Programming에서의 OOP 및 클래스 개념
+> OpenGL 수업에서 그래픽 처리와 충돌 처리에 대해 일부 배움    
+> OSSW 수업에서 프로젝트에 도움이 될 Git 사용법을 익힘    
+> C Programming에서의 기본적인 프로그래밍 개념    
+> C++ Programming에서의 OOP 및 클래스 개념    
 
 #### 이 과목에서 배울 것으로 기대되는 기술
-> 게임 프로젝트 객체
-> 게임 렌더링
-> Python Programming
-> Visual Studio 및 ViM 외 타 개발 환경에 대한 Orientation
+> 게임 프로젝트 객체    
+> 게임 렌더링    
+> Python Programming    
+> Visual Studio 및 ViM 외 타 개발 환경에 대한 Orientation    
 > Pico2D를 이용한 2D Game Programming
-> 그래픽 버퍼링
+> 그래픽 버퍼링    
 
 #### 다루지 않아 다루어 달라고 요청할 기술
-> 투사체 및 객체 충돌 처리
-> 히트스캔 처리 방식
-> 게임 세이브 & 로드
-> 윈도우 풀스크린
+> 투사체 및 객체 충돌 처리    
+> 히트스캔 처리 방식    
+> 게임 세이브 & 로드    
+> 윈도우 풀스크린    
+
+## VII. REFERENCES    
+Game Engine Black Book: DOOM by Fabien Sanglard     
+https://github.com/fabiensanglard/gebbdoom    
+Analysis videos by decino on Youtube    
+https://www.youtube.com/playlist?list=PLYZp53E4M0t_8HmPlV4m04vGKUcJIQc53    
+Speedrun records by 4shockblast and Zero-Master    
+https://youtu.be/1UkeFwJ-yHI    
 
 ### END OF DOCUMENT
 
